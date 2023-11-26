@@ -18,5 +18,12 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+        self::generarUsuarios();
+        $this->command->info('Taula usuarios inicialitzada amb èxit');
+    }
+    
+    private static function generarUsuarios()
+    {
+        \App\Models\User::factory(10)->create();
     }
 }
